@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brianna Aylen - Mis 15 Años</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(135deg, #986ab9, #C3E6CB);
+            color: #c184ec;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: auto; /* Cambiado a auto para ajustar al contenido */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 15px; /* Reducido el padding */
+            animation: fadeIn 1.5s ease-in-out;
+            margin-bottom: 10px; /* Reducido el margen inferior */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 50px; /* Ajustado para dispositivos móviles */
+            font-family: 'Pinyon Script', cursive;
+            color: gold;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8), 0 0 25px gold;
+            animation: brillo 1.5s infinite alternate;
+        }
+
+        @keyframes brillo {
+            0% { text-shadow: 4px 4px 25px gold; }
+            100% { text-shadow: 4px 4px 50px gold; }
+        }
+
+        h2 {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 50px; /* Ajustado para dispositivos móviles */
+            color: #deeee0;
+            text-shadow: 4px 4px 20px rgba(141, 226, 130, 0.6);
+            margin-top: 20px; /* Ajustado para dispositivos móviles */
+        }
+
+        .fecha {
+            font-size: 30px; /* Ajustado para dispositivos móviles */
+            font-weight: bold;
+            color: gold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .contador {
+            font-size: 25px; /* Ajustado para dispositivos móviles */
+            font-weight: bold;
+            color: gold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .galeria img {
+            width: 60%; /* Reducido el tamaño de las imágenes */
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 10px 20px; /* Ajustado para dispositivos móviles */
+            background: linear-gradient(45deg, gold, #ffcc00);
+            color: #4B0082;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px; /* Ajustado para dispositivos móviles */
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .boton:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .mensaje-final {
+            font-family: 'Great Vibes', cursive;
+            font-size: 20px; /* Ajustado para dispositivos móviles */
+            font-weight: bold;
+            max-width: 90%; /* Ajustado para dispositivos móviles */
+            line-height: 1.5;
+            text-align: center;
+            color: #dce7dc;
+            opacity: 0;
+            animation: fadeText 2s forwards;
+        }
+
+        @keyframes fadeText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .mensaje-extra {
+            font-size: 20px; /* Ajustado para dispositivos móviles */
+            font-weight: normal;
+            margin-top: 20px; /* Reducido el margen superior */
+            font-style: italic;
+        }
+
+        footer {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 30px; /* Ajustado para dispositivos móviles */
+            color: gold;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8), 0 0 25px gold;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .flecha-abajo {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px; /* Reducido el tamaño de la flecha */
+            width: 60px; /* Ancho de la flecha */
+            height: 5px; /* Alto de la flecha */
+            color: rgba(255, 215, 0, 0.3); /* Haciendo la flecha más transparente */
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* Para un desplazamiento suave en dispositivos móviles */
+            position: relative;
+        }
+
+        .carousel img {
+            scroll-snap-align: center;
+            flex: none;
+            width: 60%; /* Reducido el tamaño de las imágenes */
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .carousel img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .carousel .flecha {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+
+        .carousel .flecha:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel .flecha.izquierda {
+            left: 10px;
+        }
+
+        .carousel .flecha.derecha {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Miss 15 años</h1>
+        <h2>Brianna Aylen</h2>
+        <p class="mensaje-final">"Dejo atrás un mundo y entro a uno nuevo. Aunque a veces dudo y temo, estoy llena de esperanzas y sueños. Tengo la sensación de que estoy construyendo mi propio camino. Siento alegría y quiero compartirlo rodeada de todos los que quiero".</p>
+        <div class="flecha-abajo">⬇</div>
+    </section>
+
+    <section>
+        <p class="fecha">06 de junio del 2025</p>
+    </section>
+
+    <section>
+        <h2 style="font-size: 50px;">Faltan solo:</h2> <!-- Ajustado para dispositivos móviles -->
+        <div class="contador" id="contador"></div>
+    </section>
+
+    <section>
+        <h2>Ubicación</h2>
+        <p>Jano’s Puerto Madero</p>
+        <img src="Janos.jpg" alt="Salón" style="width: 90%; max-width: 500px; border-radius: 10px;">
+        <p>Olga Cossettini 1031, C1107, CABA</p>
+        <a href="https://maps.app.goo.gl/Wn8A52onfqgxrhd9A" class="boton">Ver Mapa</a>
+    </section>
+
+    <section class="galeria">
+        <h2>Galería</h2>
+        <div class="carousel">
+            <button class="flecha izquierda" onclick="deslizar(-1)">&#10094;</button>
+            <img src="img1.png" alt="Foto 1">
+            <img src="img2.png" alt="Foto 2">
+            <img src="img3.png" alt="Foto 3">
+            <img src="img4.png" alt="Foto 4">
+            <img src="img5.png" alt="Foto 5">
+            <img src="img6.png" alt="Foto 6">
+            <img src="img7.png" alt="Foto 7">
+            <img src="img8.png" alt="Foto 8">
+            <img src="img9.png" alt="Foto 9">
+            <img src="img10.png" alt="Foto 10">
+            <button class="flecha derecha" onclick="deslizar(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="font-size: 30px;">¡Confirma tu asistencia!</h2> <!-- Ajustado para dispositivos móviles -->
+        <a href="https://forms.gle/YY6zGoDfbQ9uzpoq9" class="boton">Confirmar Asistencia</a>
+    </section>
+
+    <section>
+        <p class="mensaje-extra">Desde que nací, un sueño comenzó a tejerse...un sueño de risas, juegos y aventuras sin fin. Un sueño que ahora se transforma en ilusión y esperanza. Y hoy, ese sueño florece en una noche mágica, donde celebro mis 15 años rodeada de amor y alegría.¡Te espero para compartir una noche inolvidable!.</p>
+    </section>
+
+    <section>
+        <a href="#top" class="boton">Volver al inicio</a>
+    </section>
+
+    <script>
+        // Script para el contador de días, horas, minutos y segundos
+        function actualizarContador() {
+            const fechaEvento = new Date('2025-06-06T00:00:00');
+            const ahora = new Date();
+            const diferencia = fechaEvento - ahora;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById('contador').innerText = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+        }
+
+        // Actualizar el contador cada segundo
+        setInterval(actualizarContador, 1000);
+
+        // Script para deslizar las imágenes del carrusel
+        let indice = 0;
+        function deslizar(direccion) {
+            const carrusel = document.querySelector('.carousel');
+            const imagenes = carrusel.querySelectorAll('img');
+            indice = (indice + direccion + imagenes.length) % imagenes.length;
+            carrusel.scrollTo({
+                left: imagenes[indice].offsetLeft,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
