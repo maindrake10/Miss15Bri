@@ -68,7 +68,7 @@
         }
 
         .galeria img {
-            width: 60%; /* Reducido el tamaño de las imágenes */
+            width: 100%; /* Ajustado para dispositivos móviles */
             height: auto;
             margin: 10px;
             border-radius: 10px;
@@ -156,16 +156,16 @@
 
         .carousel {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; /* Para un desplazamiento suave en dispositivos móviles */
+            overflow-x: hidden;
             position: relative;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
         }
 
         .carousel img {
-            scroll-snap-align: center;
             flex: none;
-            width: 60%; /* Reducido el tamaño de las imágenes */
+            width: 80%; /* Reducido el tamaño de las imágenes */
             height: auto;
             margin: 10px;
             border-radius: 10px;
