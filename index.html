@@ -156,7 +156,9 @@
 
         .carousel {
             display: flex;
-            overflow-x: hidden;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
             position: relative;
             width: 100%;
             justify-content: center;
@@ -164,8 +166,9 @@
         }
 
         .carousel img {
+            scroll-snap-align: center;
             flex: none;
-            width: 80%; /* Reducido el tamaño de las imágenes */
+            width: 80%; /* Ajustado para dispositivos móviles */
             height: auto;
             margin: 10px;
             border-radius: 10px;
@@ -176,31 +179,6 @@
         .carousel img:hover {
             transform: scale(1.1);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .carousel .flecha {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            color: rgba(255, 255, 255, 0.7);
-            background-color: rgba(0, 0, 0, 0.3);
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            z-index: 1;
-        }
-
-        .carousel .flecha:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .carousel .flecha.izquierda {
-            left: 10px;
-        }
-
-        .carousel .flecha.derecha {
-            right: 10px;
         }
     </style>
 </head>
@@ -232,7 +210,6 @@
     <section class="galeria">
         <h2>Galería</h2>
         <div class="carousel">
-            <button class="flecha izquierda" onclick="deslizar(-1)">&#10094;</button>
             <img src="img1.png" alt="Foto 1">
             <img src="img2.png" alt="Foto 2">
             <img src="img3.png" alt="Foto 3">
@@ -243,7 +220,6 @@
             <img src="img8.png" alt="Foto 8">
             <img src="img9.png" alt="Foto 9">
             <img src="img10.png" alt="Foto 10">
-            <button class="flecha derecha" onclick="deslizar(1)">&#10095;</button>
         </div>
     </section>
 
@@ -277,18 +253,6 @@
 
         // Actualizar el contador cada segundo
         setInterval(actualizarContador, 1000);
-
-        // Script para deslizar las imágenes del carrusel
-        let indice = 0;
-        function deslizar(direccion) {
-            const carrusel = document.querySelector('.carousel');
-            const imagenes = carrusel.querySelectorAll('img');
-            indice = (indice + direccion + imagenes.length) % imagenes.length;
-            carrusel.scrollTo({
-                left: imagenes[indice].offsetLeft,
-                behavior: 'smooth'
-            });
-        }
     </script>
 </body>
 </html>
