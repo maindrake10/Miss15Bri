@@ -180,6 +180,42 @@
             transform: scale(1.1);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
+
+        .dress-code {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .dress-code img {
+            width: 150px; /* Tamaño pequeño */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dress-code-text {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #000000; /* Color negro */
+            font-weight: bold;
+            font-size: 20px; /* Tamaño de letra grande */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .dress-code-text-bottom {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #000000; /* Color negro */
+            font-weight: bold;
+            font-size: 20px; /* Tamaño de letra grande */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -228,6 +264,12 @@
         <p><strong>Presencia requerida:</strong><br>Tu compañía es el mejor regalo.</p>
         <p><strong>Obsequio opcional:</strong><br>Si deseas tener un detalle, te agradeceré si es en efectivo o mediante transferencia.</p>
         <p><strong>Mi alias:</strong><br>jugodenaranja.com</p>
+    </section>
+
+    <section class="dress-code">
+        <img src="dresscode.png" alt="Dress Code">
+        <div class="dress-code-text">VESTIMENTA</div>
+        <div class="dress-code-text-bottom">ELEGANTE</div>
     </section>
 
     <section>
