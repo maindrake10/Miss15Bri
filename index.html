@@ -156,21 +156,21 @@
 
         .carousel {
             display: flex;
-            overflow-x: scroll;
+            overflow-x: auto; /* Cambiado a auto para permitir el desplazamiento */
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             position: relative;
             width: 100%;
-            justify-content: center;
+            justify-content: flex-start; /* Cambiado a flex-start para alinear las imágenes al inicio */
             align-items: center;
         }
 
         .carousel img {
-            scroll-snap-align: center;
+            scroll-snap-align: start; /* Cambiado a start para alinear las imágenes al inicio */
             flex: none;
             width: 70%; /* Reducido el tamaño de las fotos */
             height: auto;
-            margin: 0 5px; /* Ajustado para mostrar pedacitos de las imágenes laterales */
+            margin: 0 10px; /* Aumentado el margen para mayor separación */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -209,7 +209,7 @@
 
     <section class="galeria">
         <h2>Galería</h2>
-        <div class="carousel">
+        <div class="carousel" id="carousel">
             <img src="img1.png" alt="Foto 1">
             <img src="img2.png" alt="Foto 2">
             <img src="img3.png" alt="Foto 3">
@@ -258,8 +258,17 @@
             document.getElementById('contador').innerText = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
         }
 
+        // Desplazar el carrusel al inicio para mostrar todas las imágenes
+        function desplazarCarrusel() {
+            const carousel = document.getElementById('carousel');
+            carousel.scrollLeft = 0;
+        }
+
         // Actualizar el contador cada segundo
         setInterval(actualizarContador, 1000);
+
+        // Desplazar el carrusel al cargar la página
+        window.onload = desplazarCarrusel;
     </script>
 </body>
 </html>
