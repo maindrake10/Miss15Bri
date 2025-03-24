@@ -11,8 +11,10 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: linear-gradient(135deg, #986ab9, #C3E6CB);
-            color: #c184ec;
+            background: linear-gradient(135deg, #5a2b7e, #7fa898), url('fondo.jpg'); /* Agregar imagen de fondo y hacer el color lila más fuerte */
+            background-blend-mode: overlay; /* Mezclar colores y fondo */
+            background-size: cover; /* Ajustar tamaño del fondo */
+            color: #5a2b7e; /* Ajustar color del texto a lila */
             overflow-x: hidden;
         }
 
@@ -35,7 +37,7 @@
         h1 {
             font-size: 50px; /* Ajustado para dispositivos móviles */
             font-family: 'Pinyon Script', cursive;
-            color: gold;
+            color: gold; /* Ajustar color a dorado */
             text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8), 0 0 25px gold;
             animation: brillo 1.5s infinite alternate;
         }
@@ -84,7 +86,7 @@
         .boton {
             display: inline-block;
             padding: 10px 20px; /* Ajustado para dispositivos móviles */
-            background: linear-gradient(45deg, gold, #ffcc00);
+            background: linear-gradient(45deg, #ffcc00, #ff9900); /* Ajustar colores del botón */
             color: #4B0082;
             border-radius: 10px;
             text-decoration: none;
@@ -97,6 +99,7 @@
         .boton:hover {
             transform: scale(1.1);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #ff9900, #ffcc00); /* Ajustar colores del botón al pasar el ratón */
         }
 
         .mensaje-final {
@@ -215,6 +218,15 @@
             font-weight: bold;
             font-size: 18px; /* Tamaño de letra reducido */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1, h2, .fecha, .contador, .boton, .mensaje-final, .mensaje-extra, footer {
+            color: #5a2b7e; /* Ajustar color del texto a lila */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Añadir sombra al texto para mayor visibilidad */
+        }
+
+        h1, .boton, .mensaje-extra {
+            color: #800000; /* Ajustar color del texto a bordó */
         }
     </style>
 </head>
