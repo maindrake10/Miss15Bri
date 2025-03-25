@@ -236,6 +236,39 @@
     </section>
 
     <section>
-        <p c    <section>io        <a href="#top" class="boton">Volver al inicio</a>ti    </section>on h    <script>io        // Script para el contador de días, horas, minutos y segundosip        function actualizarContador() {t>            const fechaEvento = new Date('2025-06-06T00:00:00'); S            const ahora = new Date();nc            const diferencia = fechaEvento - ahora;                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));              const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));              const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));              const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);                document.getElementById('contador').innerText = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;          }            // Desplazar el carrusel al inicio para mostrar todas las imágenes
-        function desplazarCarrusel() {//            const carousel = document.getElementById('carousel'); D            carousel.scrollLeft = 0;nc        }            // Actualizar el contador cada segundo
-        setInterval(actualizarContador, 1000);// A        // Desplazar el carrusel al cargar la páginatI        window.onload = desplazarCarrusel;//    </script> D</body>nd</html>
+        <p class="mensaje-extra">Desde que nací, un sueño comenzó a tejerse...un sueño de risas, juegos y aventuras sin fin. Un sueño que ahora se transforma en ilusión y esperanza. Y hoy, ese sueño florece en una noche mágica, donde celebro mis 15 años rodeada de amor y alegría.¡Te espero para compartir una noche inolvidable!.</p>
+    </section>
+
+    <section>
+        <a href="#top" class="boton">Volver al inicio</a>
+    </section>
+
+    <script>
+        // Script para el contador de días, horas, minutos y segundos
+        function actualizarContador() {
+            const fechaEvento = new Date('2025-06-06T00:00:00');
+            const ahora = new Date();
+            const diferencia = fechaEvento - ahora;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById('contador').innerText = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+        }
+
+        // Desplazar el carrusel al inicio para mostrar todas las imágenes
+        function desplazarCarrusel() {
+            const carousel = document.getElementById('carousel');
+            carousel.scrollLeft = 0;
+        }
+
+        // Actualizar el contador cada segundo
+        setInterval(actualizarContador, 1000);
+
+        // Desplazar el carrusel al cargar la página
+        window.onload = desplazarCarrusel;
+    </script>
+</body>
+</html>
