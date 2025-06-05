@@ -245,18 +245,24 @@
 
     <script>
         // Script para el contador de días, horas, minutos y segundos
-        function actualizarContador() {
-            const fechaEvento = new Date('2025-06-06T21:30:00');
-            const ahora = new Date();
-            const diferencia = fechaEvento - ahora;
+       function actualizarContador() {
+    const fechaEvento = new Date('2025-06-06T21:30:00');
+    const ahora = new Date();
+    const diferencia = fechaEvento - ahora;
 
-            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-            document.getElementById('contador').innerText = `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
-        }
+    const textoDias = dias === 1 ? "día" : "días";
+    const textoHoras = horas === 1 ? "hora" : "horas";
+    const textoMinutos = minutos === 1 ? "minuto" : "minutos";
+    const textoSegundos = segundos === 1 ? "segundo" : "segundos";
+
+    document.getElementById('contador').innerText =
+        `${dias} ${textoDias}, ${horas} ${textoHoras}, ${minutos} ${textoMinutos}, ${segundos} ${textoSegundos}`;
+}
 
         // Desplazar el carrusel al inicio para mostrar todas las imágenes
         function desplazarCarrusel() {
